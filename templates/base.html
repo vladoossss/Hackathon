@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h1 class="my-0 mr-md-auto font-weight-normal">Hackathon</h1>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <a class="btn btn-dark btn-lg" href="/">Главная</a>
+            <a class="btn btn-primary btn-lg" href="/text">Прочитай текст</a>
+            <a class="btn btn-warning btn-lg" href="/audio">Прослушай аудио</a>
+            <a class="btn btn-success btn-lg" href="/video">Просмотри видео</a>
+        </div
+    </nav>
+</div>
+
+
+{% block body %}{% endblock %}
+
+
+</tbody>
+</table>
+
+</body>
+<html>

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<div class='container' style="text-align: center; color: #3838ff;">
+    <p>
+    <h1>Прочитай предложение и повтори</h1>
+    <h4>Пожалуйста, выберите номер предложения:</h4>
+    </p>
+    <form action="/text" method="POST">
+        <input type="submit" name="submit_button" class="btn btn-outline-primary btn-lg" value="1">
+        <input type="submit" name="submit_button" class="btn btn-outline-primary btn-lg" value="2">
+        <input type="submit" name="submit_button" class="btn btn-outline-primary btn-lg" value="3">
+        <input type="submit" name="submit_button" class="btn btn-outline-primary btn-lg" value="4">
+        <input type="submit" name="submit_button" class="btn btn-outline-primary btn-lg" value="5">
+
+    </form>
+
+
+    {% if number%}
+    <p>
+    <h2>{{sentence}}</h2>
+    <form action="/text" method="POST">
+        <ul>
+            <li>При выборе "распознать по голосу" подождите в течение 3 секунд и далее говорите. По окончании речи
+                результат будет получен автоматически.</li>
+            <li>При выборе "распознать по лицу" подождите в течение 3 секунд пока включится камера. По окончании речи
+                нажмите "остановить видео" и вы увидите результат.</li>
+        </ul>
+        <input type="hidden" name="text" value="{{sentence}}">
+        <input type="submit" name="submit_button" class="btn btn-primary btn-lg" value="Распознать по голосу">
+        <input type="submit" name="submit_button" class="btn btn-primary btn-lg" value="Распознать по лицу">
+    </form>
+    </p>
+
+    {% endif %}
+
+
+    {% if audio%}
+    <h3>Вот, что мне удалось услышать:</h3>
+    <p><textarea style="width: 800px; height: 100px; font-size: 30px;" name="text_out">{{text_out}}</textarea></p>
+    <h3> Молодец! Ты сказал правильно на {{score}} %!</h3>
+    <h3>Теперь можешь выбрать другой номер текста и повторить упражнение.</h3>
+    {% endif %}
+
+
+    {% if video%}
+    <img src="{{ url_for('video_feed') }}" />
+    <p>
+    <form action="/text" method="POST">
+        <input type="hidden" name="text" value="{{sentence}}">
+        <input type="submit" name="submit_button" class="btn btn-primary btn-lg" value="Остановить видео">
+    </form>
+    </p>
+    {% endif %}
+
+
+    {% if stop_video%}
+    <h3> Молодец! Отличная работа!</h3>
+    <h3>Теперь можешь выбрать другой номер текста и повторить упражнение.</h3>
+    {% endif %}
+
+
+</div>
+{% endblock %}

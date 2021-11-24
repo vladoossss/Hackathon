@@ -8,7 +8,8 @@ Jinja2==3.0.3
 MarkupSafe==2.0.1
 numpy
 opencv-python==4.5.4.58
-PyAudio @ file:///C:/Users/vekle/Documents/hackaton/utils/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
+#PyAudio @ file:///C:/Users/vekle/Documents/hackaton/utils/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
+#pyaudio
 pycparser==2.21
 SpeechRecognition==3.8.1
 vosk==0.3.32

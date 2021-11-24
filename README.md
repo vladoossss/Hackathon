@@ -17,14 +17,13 @@
 3. Запуск веб-сервиса:
     * python app.py
 
-## Linux
+## Linux:
 1. Создание и активация виртуального окружения: 
     * cd путь к папке Hackathon
     * python -m venv venv
     * source venv/bin/activate
 
 2. Установка зависимостей:
-    * cd путь к папке Hackathon
     * В файле requirements.txt раскомментировать 12 строчку
     * pip install -r requirements.txt 
 
